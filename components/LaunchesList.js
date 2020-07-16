@@ -8,7 +8,7 @@ export const DEFAULT_LAUNCHES_LIMIT = 12;
 
 export const LAUNCHES_PAST_QUERY = gql`
   query launchesPast($limit: Int!, $offset: Int!) {
-      launchesPast(limit: $limit, offset: $offset, sort: "launch_date_utc", order: "DESC") {
+      launchesPast(limit: $limit, offset: $offset, sort: "launch_date_utc", order: "ASC") {
         id
         mission_name
         links {
@@ -56,10 +56,10 @@ const LaunchesList = () => {
   return (
     <>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
-        {launches.map((launch) =>
+        {launches.map((launch, i) =>
           (
             <LaunchCard
-              key={launch.id}
+              key={launch.id ? `launch-${launch.id}` : `skeleton-${i}`}
               launch={launch}
               isLoading={loading}
             />

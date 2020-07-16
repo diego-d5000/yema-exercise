@@ -5,6 +5,7 @@ import MainLayout from 'components/MainLayout'
 const Home = () => {
   return (
     <MainLayout>
+      <h1 className="text-center font-semibold text-2xl mb-8">Launches</h1>
       <LaunchesList />
     </MainLayout>
   )
