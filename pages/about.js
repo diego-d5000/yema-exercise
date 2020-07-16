@@ -29,15 +29,12 @@ const About = () => {
   const { data, error, loading } = useQuery(COMPANY_QUERY);
 
   if (error) return <div>Error, intente más tarde</div>
-  // it doesnt need loading state because is full static
 
   const { company } = data || {};
   return (
     <MainLayout>
-      <h1 className="text-center font-semibold text-2xl">About {company.name}</h1>
-      <HeroCompanyInfo company={company} />
-      <h2 className="text-center font-semibold text-2xl">Headquarters</h2>
-      <LocationComponent headquarters={company.headquarters} />
+      <HeroCompanyInfo company={company} isLoading={loading} />
+      <LocationComponent headquarters={company?.headquarters} isLoading={loading} />
     </MainLayout>
   )
 }

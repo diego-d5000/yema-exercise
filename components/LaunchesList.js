@@ -34,6 +34,7 @@ const PageButton = ({ page, active }) => (
 )
 
 const LaunchesList = () => {
+  debugger
   const router = useRouter();
   const page = router?.query?.page || 1;
   const { loading, error, data, } = useQuery(LAUNCHES_PAST_QUERY,
@@ -41,8 +42,7 @@ const LaunchesList = () => {
       variables: {
         offset: (+page - 1) * DEFAULT_LAUNCHES_LIMIT,
         limit: DEFAULT_LAUNCHES_LIMIT,
-      },
-      notifyOnNetworkStatusChange: true,
+      }
     }
   );
 
