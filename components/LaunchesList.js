@@ -34,7 +34,6 @@ const PageButton = ({ page, active }) => (
 )
 
 const LaunchesList = () => {
-  debugger
   const router = useRouter();
   const page = router?.query?.page || 1;
   const { loading, error, data, } = useQuery(LAUNCHES_PAST_QUERY,

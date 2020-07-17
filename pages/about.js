@@ -1,8 +1,9 @@
-import { initializeApollo } from 'lib/apolloClient'
-import MainLayout from 'components/MainLayout'
-import { gql, useQuery } from '@apollo/client'
-import HeroCompanyInfo from 'components/HeroCompanyInfo'
-import LocationComponent from 'components/LocationComponent'
+import { initializeApollo } from 'lib/apolloClient';
+import MainLayout from 'components/MainLayout';
+import { gql, useQuery } from '@apollo/client';
+import HeroCompanyInfo from 'components/HeroCompanyInfo';
+import LocationComponent from 'components/LocationComponent';
+import Head from 'next/head';
 
 const COMPANY_QUERY = gql`
 query company {
@@ -33,6 +34,9 @@ const About = () => {
   const { company } = data || {};
   return (
     <MainLayout>
+      <Head>
+        <title key="title">SpaceX Nextjs | About</title>
+      </Head>
       <HeroCompanyInfo company={company} isLoading={loading} />
       <LocationComponent headquarters={company?.headquarters} isLoading={loading} />
     </MainLayout>

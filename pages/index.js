@@ -1,10 +1,14 @@
-import { initializeApollo } from 'lib/apolloClient'
-import LaunchesList, { LAUNCHES_PAST_QUERY, DEFAULT_LAUNCHES_LIMIT } from 'components/LaunchesList'
-import MainLayout from 'components/MainLayout'
+import { initializeApollo } from 'lib/apolloClient';
+import LaunchesList, { LAUNCHES_PAST_QUERY, DEFAULT_LAUNCHES_LIMIT } from 'components/LaunchesList';
+import MainLayout from 'components/MainLayout';
+import Head from 'next/head';
 
 const Home = () => {
   return (
     <MainLayout>
+      <Head>
+        <title key="title">SpaceX Nextjs | Launches</title>
+      </Head>
       <h1 className="text-center font-semibold text-2xl mb-8">Launches</h1>
       <LaunchesList />
     </MainLayout>

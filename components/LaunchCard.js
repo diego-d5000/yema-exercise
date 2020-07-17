@@ -18,14 +18,14 @@ const LaunchCard = ({ launch, isLoading }) => {
         <div className="px-3 pt-2">
           {isLoading ? <Skeleton /> : <h1 className={
             cn("my-2 text-lg font-semibold h-14 overflow-hidden",
-              { 'text-red-600': !launch.launch_success, 'text-green-600': launch.launch_success }
+              { 'text-red-700': !launch.launch_success, 'text-green-800': launch.launch_success }
             )}>{launch.mission_name}</h1>}
           {isLoading ? <Skeleton /> : <span><b>Fecha: </b> {launchDate.toLocaleDateString()}</span>}<br />
           {isLoading ? <Skeleton /> : <span><b>Hora: </b> {launchDate.toLocaleTimeString()} (GMT{(launchDate.getTimezoneOffset() / 60 * -1)}:00)</span>}
         </div>
       </header>
       <div className="p-3">
-        <a className="text-blue-600" href={launch?.links?.wikipedia} target="_blank" rel="noopener">Ver Más</a>
+        <a className="text-blue-700" href={launch?.links?.wikipedia} target="_blank" rel="noopener">Ver Más</a>
       </div>
     </article>
   )
