@@ -1,5 +1,5 @@
 const Footer = () => (
-  <footer className="text-white bg-black body-font">
+  <footer className="text-white bg-black body-font" role="contentinfo" aria-label="Footer">
     <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
       <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
         <span className="ml-3 text-xl">@diegod3v</span>
